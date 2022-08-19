@@ -22,10 +22,12 @@ pipelines:
         configuration:
           inputResources:
             - name: start_trigger
+          outputResources:
+            - name: trigger_new_pipe_{{ . }}
         execution:
           onExecute:
             - echo "pipeline one {{ . }}
-            - write_output "Test" "version=${run_number}"
+            - write_output "trigger_new_pipe_{{ . }}" "version=${run_number}"
   - name: second_pipe_{{ . }}
     steps:
       - name: bash_1
