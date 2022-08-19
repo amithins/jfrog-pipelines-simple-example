@@ -6,7 +6,7 @@ resources:
     type: PropertyBag
     configuration:
       default: -1
-{{- range untilStep 1 5000 1 }}
+{{- range untilStep 1 500 1 }}
   - name: trigger_new_pipe_{{ . }}
     type: PropertyBag
     configuration:
@@ -14,7 +14,7 @@ resources:
 {{- end }}
 
 pipelines:
-{{- range untilStep 1 5000 1 }}
+{{- range untilStep 1 500 1 }}
   - name: first_pipe_{{ . }}
     steps:
       - name: bash_1
