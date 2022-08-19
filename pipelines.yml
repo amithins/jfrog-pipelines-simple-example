@@ -1,0 +1,39 @@
+template: true
+valuesFilePath:
+
+resources:
+  - name: start_trigger
+    type: PropertyBag
+    configuration:
+      default: -1
+{{- range untilStep 1 5000 1 }}
+  - name: trigger_new_pipe_{{ . }}
+    type: PropertyBag
+    configuration:
+      default: -1
+{{- end }}
+
+pipelines:
+{{- range untilStep 1 5000 1 }}
+  - name: first_pipe_{{ . }}
+    steps:
+      - name: bash_1
+        type: Bash
+        configuration:
+          inputResources:
+            - name: start_trigger
+        execution:
+          onExecute:
+            - echo "pipeline one {{ . }}
+            - write_output "Test" "version=${run_number}"
+  - name: second_pipe_{{ . }}
+    steps:
+      - name: bash_1
+        type: Bash
+        configuration:
+          inputResources:
+            - name: trigger_new_pipe_{{ . }}
+        execution:
+          onExecute:
+            - echo "pipeline two {{ . }}
+{{- end }}
