@@ -37,5 +37,5 @@ pipelines:
             - name: trigger_new_pipe_{{ . }}
         execution:
           onExecute:
-            - echo "pipeline two {{ . }}
+            - echo "pipeline two {{ . }}"
 {{- end }}
