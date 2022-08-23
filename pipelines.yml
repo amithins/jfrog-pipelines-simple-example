@@ -26,7 +26,7 @@ pipelines:
             - name: trigger_new_pipe_{{ . }}
         execution:
           onExecute:
-            - echo "pipeline one {{ . }}
+            - echo "pipeline one {{ . }}"
             - write_output "trigger_new_pipe_{{ . }}" "version=${run_number}"
   - name: second_pipe_{{ . }}
     steps:
