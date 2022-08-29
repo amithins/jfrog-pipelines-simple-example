@@ -4,9 +4,6 @@ pipelines:
       - name: test
         type: Bash
         configuration:
-          inputResources:
-            - name: test_git_repo
-              trigger: false
           integrations:
             - name: git
         execution:
