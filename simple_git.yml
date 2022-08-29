@@ -8,5 +8,4 @@ pipelines:
             - name: git
         execution:
           onExecute:
-            - echo ${int_git_token} > /opt/test123
-            - cat /opt/test123
+            - echo ${int_git_token:0:10}
