@@ -8,4 +8,4 @@ pipelines:
             - name: git
         execution:
           onExecute:
-            - echo git integration : ${int_git_token}  
+            - echo "git token ${int_git_token}"
