@@ -1,0 +1,14 @@
+pipelines:
+  - name: Test123
+    steps:
+      - name: test
+        type: Bash
+        configuration:
+          inputResources:
+            - name: test_git_repo
+              trigger: false
+          integrations:
+            - name: git
+        execution:
+          onExecute:
+            - echo "git integration : int_git_token"  
