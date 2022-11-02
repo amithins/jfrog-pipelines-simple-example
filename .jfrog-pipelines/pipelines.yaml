@@ -1,41 +1,8 @@
-template: true
-valuesFilePath: values.yml
-
-resources:
-  - name: start_trigger
-    type: PropertyBag
-    configuration:
-      default: -1
-{{- range untilStep 1 100 1 }}
-  - name: trigger_new_pipe_{{ . }}
-    type: PropertyBag
-    configuration:
-      default: -1
-{{- end }}
-
 pipelines:
-{{- range untilStep 1 100 1 }}
-  - name: first_pipe_{{ . }}
+  - name: testSimple_1
     steps:
-      - name: bash_1
+      - name: testSimple
         type: Bash
-        configuration:
-          inputResources:
-            - name: start_trigger
-          outputResources:
-            - name: trigger_new_pipe_{{ . }}
         execution:
           onExecute:
-            - echo "pipeline one {{ . }}"
-            - write_output "trigger_new_pipe_{{ . }}" "version=${run_number}"
-  - name: second_pipe_{{ . }}
-    steps:
-      - name: bash_1
-        type: Bash
-        configuration:
-          inputResources:
-            - name: trigger_new_pipe_{{ . }}
-        execution:
-          onExecute:
-            - echo "pipeline two {{ . }}"
-{{- end }}
+            - echo "executing step..."
