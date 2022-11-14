@@ -5,4 +5,4 @@ pipelines:
         type: Bash
         execution:
           onExecute:
-            - echo "executing step 2..."
+            - echo "executing step 3..."
