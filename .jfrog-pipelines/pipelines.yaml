@@ -14,4 +14,5 @@ pipelines:
                 registry: registry
         execution:
           onExecute:
+            - docker pull releases-docker.jfrog.io/jfrog/pipelines-u18node:16
             - echo "executing step 4..."
