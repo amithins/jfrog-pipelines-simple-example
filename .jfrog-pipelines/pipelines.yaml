@@ -9,7 +9,7 @@ pipelines:
             image:
               custom:
                 name: amithknov24gcp2.jfrogdev.org/docker/jfrog/pipelines-u18node
-                tag: 16
+                tag: "16"
                 sourceRepository: docker
                 registry: registry
         execution:
