@@ -3,6 +3,15 @@ pipelines:
     steps:
       - name: testSimple
         type: Bash
+        configuration:
+          runtime:
+            type: image
+            image:
+              custom:
+                name: amithknov24gcp2.jfrogdev.org/docker/jfrog/pipelines-u18node
+                tag: 16
+                sourceRepository: docker
+                registry: registry
         execution:
           onExecute:
             - echo "executing step 4..."
