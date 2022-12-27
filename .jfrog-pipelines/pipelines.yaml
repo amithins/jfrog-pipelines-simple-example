@@ -12,4 +12,4 @@ pipelines:
                 tag: "trusty"
         execution:
           onExecute:
-            - sleep 3600
+            - sleep 3600; exit 0;
