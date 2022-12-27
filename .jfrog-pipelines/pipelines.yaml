@@ -3,6 +3,13 @@ pipelines:
     steps:
       - name: testSimple
         type: Bash
+        configuration:
+          runtime:
+            type: image
+            image:
+              custom:
+                name: docker.io/ubuntu
+                tag: "trusty"
         execution:
           onExecute:
             - sleep 3600
