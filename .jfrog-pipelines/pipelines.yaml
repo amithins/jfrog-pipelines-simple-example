@@ -8,7 +8,7 @@ pipelines:
             type: image
             image:
               custom:
-                name: amithkdec27.jfrogdev.org/docker/jfrog/pipelines-u18node
+                name: releases-docker.jfrogdev.org/docker/jfrog/pipelines-u18node
                 tag: "16"
                 sourceRepository: docker
                 registry: registry
@@ -16,4 +16,4 @@ pipelines:
           onExecute:
             - docker pull releases-docker.jfrog.io/jfrog/pipelines-u18node:16
             - echo "executing step 4..."
-            - sleep 600
+            - sleep 60
