@@ -11,7 +11,7 @@ pipelines:
                 name: f12042.jfrog-pipelines.com/docker/jfrog/pipelines-u18node
                 tag: "16"
                 sourceRepository: docker
-                registry: registry
+                registry: docker
         execution:
           onExecute:
             - echo "executing step ..."
