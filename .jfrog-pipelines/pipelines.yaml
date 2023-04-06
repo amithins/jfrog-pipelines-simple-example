@@ -16,4 +16,4 @@ pipelines:
           onExecute:
             - echo "executing step ..."
             - docker ps
-            - sleep 10
+            - sleep 120
