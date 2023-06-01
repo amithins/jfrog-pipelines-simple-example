@@ -6,7 +6,8 @@ pipelines:
     steps:
       - name: testSimple
         type: Bash
-        execution:
+        configuration:
           nodePool: k8s_test
+        execution:
           onExecute:
             - echo "executing step"
