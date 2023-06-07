@@ -2,7 +2,7 @@ resources:
   - name: testamith
     type: GitRepo
     configuration:
-      gitProvider: github
+      gitProvider: test
       path: amithins/jfrog-pipelines-simple-example
       files:
         exclude: .jfrog-pipelines/*
