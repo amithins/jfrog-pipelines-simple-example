@@ -1,3 +1,18 @@
+resources:
+  - name: testamith
+    type: GitRepo
+    configuration:
+      gitProvider: github
+      path: amithins/jfrog-pipelines-simple-example
+      files:
+        exclude: .jfrog-pipelines/*
+      branches:
+        include: {{gitBranch}}
+      pullRequestTargetBranches:
+        include: test_pr
+      buildOn:
+        pullRequestCreate: true
+        
 pipelines:
   - name: testSimple_1
     steps:
