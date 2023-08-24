@@ -15,5 +15,5 @@ pipelines:
         execution:
           onExecute:
             - echo "executing step ..."
-            - docker ps
+            - sleep 60
             - docker pull amithkaug1602.jfrogdev.org/docker/jfrog/pipelines-u18java:11
