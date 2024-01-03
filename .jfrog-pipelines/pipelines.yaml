@@ -5,6 +5,10 @@ resources:
       AD_HOC_RELEASE_BRANCH_NAME: "pipelines"
 pipelines:
   - name: testSimple_amith_1
+    configuration:
+      environmentVariables:
+        readOnly:
+          test: 123
     steps:
       - name: testSimple
         type: Bash
