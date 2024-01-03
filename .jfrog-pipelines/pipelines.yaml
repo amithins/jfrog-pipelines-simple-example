@@ -8,6 +8,10 @@ pipelines:
     steps:
       - name: testSimple
         type: Bash
+        configuration:
+          inputResources:
+          - name: propertyBag_amtest_1
+            newVersionOnly: true
         execution:
           onExecute:
             - echo "AD_HOC_RELEASE_BRANCH_NAME $AD_HOC_RELEASE_BRANCH_NAME..."
