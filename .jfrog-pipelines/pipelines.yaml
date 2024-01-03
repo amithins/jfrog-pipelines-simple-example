@@ -4,7 +4,7 @@ resources:
     configuration:
       AD_HOC_RELEASE_BRANCH_NAME: "pipelines"
 pipelines:
-  - name: testSimple_1
+  - name: testSimple_amith_1
     steps:
       - name: testSimple
         type: Bash
