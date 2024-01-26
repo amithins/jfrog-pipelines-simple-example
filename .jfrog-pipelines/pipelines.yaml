@@ -12,7 +12,7 @@ pipelines:
       - name: test_{{ .step_name }}
         configuration:
           inputSteps:
-            - name: trigger_all
+            - name: testSimple
         type: Bash
         execution:
           onStart:
