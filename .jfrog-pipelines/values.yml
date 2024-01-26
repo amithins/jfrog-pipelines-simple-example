@@ -1,3 +1,9 @@
 setupStepCommonsTaskVersion: "jfdev-ci-commons/setup-step-commons@v0.0.1"
 test: "jfdev-ci-commons/setup-step-commons@v0.0.1"
 test2: "hellow_world"
+dbE2ETests:
+  - step_name: derby
+  - step_name: postgresql
+  - step_name: mysql
+  - step_name: oracle
+  - step_name: mssql
