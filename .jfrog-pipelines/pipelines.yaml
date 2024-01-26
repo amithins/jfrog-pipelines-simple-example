@@ -16,7 +16,7 @@ pipelines:
             - name: testSimple
         execution:
           onStart:
-            - task: '{{ .Values.setupStepCommonsTaskVersion }}'
+            - task: '{{ .Values.test }}'
               input:
                 JFDEV_CI_COMMONS_DEFAULT_VERSION: 1
                 PROJECT_ROOT_DIR: "test"
