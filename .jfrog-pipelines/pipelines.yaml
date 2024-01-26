@@ -13,7 +13,7 @@ pipelines:
         type: Bash
         execution:
           onStart:
-            - task: {{ .Values.setupStepCommonsTaskVersion }}
+            - task: "{{ .Values.setupStepCommonsTaskVersion }}"
               input:
                 JFDEV_CI_COMMONS_DEFAULT_VERSION: 1
                 PROJECT_ROOT_DIR: "test"
