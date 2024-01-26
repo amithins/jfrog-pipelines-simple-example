@@ -8,20 +8,13 @@ pipelines:
         execution:
           onExecute:
             - echo "executing step 4..."
-      - name: test_1
+    {{- range $.Values.dbE2ETests }}
+      - name: test_{{ .step_name }}
         type: Bash
-        configuration:
-          inputSteps:
-            - name: testSimple
         execution:
           onStart:
-            - echo "test 1 {{ .Values.setupStepCommonsTaskVersion }}"
-            - echo {{ .Values.test2 }}
-            - task: {{ .Values.setupStepCommonsTaskVersion }}
-              input:
-                JFDEV_CI_COMMONS_DEFAULT_VERSION: 1
-                PROJECT_ROOT_DIR: "test"
-              id: setup_step_commons
-            - echo "test"
+            - echo "{{ $.Values.setupStepCommonsTaskVersion }}"
           onExecute:
             - echo test
+
+    {{- end }}
