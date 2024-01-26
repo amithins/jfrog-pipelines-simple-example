@@ -1,3 +1,5 @@
+tempate: true
+valuesFilePath: ./values.yml
 pipelines:
   - name: testSimple_pipeline_array
     steps:
