@@ -11,6 +11,9 @@ pipelines:
     {{- range $.Values.dbE2ETests }}
       - name: test_{{ .step_name }}
         type: Bash
+        configuration:
+          inputSteps:
+            - name: testSimple
         execution:
           onStart:
             - task: "{{ .Values.setupStepCommonsTaskVersion }}"
