@@ -16,6 +16,8 @@ pipelines:
             - name: testSimple
         execution:
           onStart:
+            - echo "test 1 {{ .Values.test }}"
+            - echo " test 2 {{ .Values.setupStepCommonsTaskVersion }}"
             - task: '{{ .Values.test }}'
               input:
                 JFDEV_CI_COMMONS_DEFAULT_VERSION: 1
