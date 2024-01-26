@@ -10,6 +10,9 @@ pipelines:
             - echo "executing step 4..."
     {{- range $.Values.dbE2ETests }}
       - name: test_{{ .step_name }}
+        configuration:
+          inputSteps:
+            - name: trigger_all
         type: Bash
         execution:
           onStart:
